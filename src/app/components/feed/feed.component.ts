@@ -26,7 +26,6 @@ export class FeedComponent implements OnInit {
     this.feedService.getFeed().subscribe(value => {
       this.feed = value;
     }, error1 => {
-      console.log(error1);
       this.error = 'Fehler beim laden des Feeds...';
     });
   }
@@ -42,7 +41,6 @@ export class FeedComponent implements OnInit {
     this.feed.postEntities.push(this.post);
     this.post = new Post();
     this.feedService.update(this.feed).subscribe(value => {
-      console.log(value);
       this.message = 'Der Post wurde erfoglreich erstellt.';
     }, error => {
       this.message = error.message;

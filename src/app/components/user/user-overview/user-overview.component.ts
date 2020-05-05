@@ -16,12 +16,9 @@ export class UserOverviewComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.user);
     this.userService.getUser().subscribe(value => {
-      console.log(value);
       this.user = value;
     }, error1 => {
-      console.log(error1);
       this.error = 'Fehler beim laden des Benutzers...';
     });
   }

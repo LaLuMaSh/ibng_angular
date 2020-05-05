@@ -32,7 +32,6 @@ export class LoginComponent implements OnInit {
       localStorage.setItem(`user`, JSON.stringify(value));
       this.router.navigateByUrl('/home');
     }, error => {
-      console.log('err...');
       this.error = 'Es ist ein Fehler beim anmelden aufgetreten';
     });
   }

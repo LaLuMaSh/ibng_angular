@@ -22,7 +22,6 @@ export class GlobalFeedComponent implements OnInit {
     this.feedService.getAll().subscribe(value => {
       this.posts = value;
     }, error1 => {
-      console.log(error1);
       this.error = 'Fehler beim laden des Feeds...';
     });
   }

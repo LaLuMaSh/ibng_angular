@@ -27,11 +27,8 @@ export class RegisterComponent implements OnInit {
 
   sendRegisterRequest(f: NgForm) {
     this.authService.register(this.user).subscribe(value => {
-      console.log(value);
       this.message = 'Der Benutzer ' + value.username + ' wurde erfoglreich erstellt.';
     }, error => {
-      console.log('error');
-      console.log(error);
       this.message = error.message;
     });
   }
