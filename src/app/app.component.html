@@ -11,6 +11,11 @@
           </button>
         </mat-toolbar-row>
         <mat-toolbar-row *ngIf="isLoggedIn()">
+          <button mat-button routerLink="/feed/global" routerLinkActive="active">
+            <a>Alle Posts</a>
+          </button>
+        </mat-toolbar-row>
+        <mat-toolbar-row *ngIf="isLoggedIn()">
           <button mat-button routerLink="/feed" routerLinkActive="active">
             <a>Feeds</a>
           </button>

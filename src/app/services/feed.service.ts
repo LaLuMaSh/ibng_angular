@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Feed } from '../model/feed';
+import { Feed, Post } from '../model/feed';
 
 @Injectable({
   providedIn: 'root'
@@ -17,5 +17,8 @@ export class FeedService {
 
   public update(feed: Feed) {
     return this.httpClient.post('http://localhost:8080/feed/user/update', feed);
+  }
+  public getAll(): Observable<Post[]> {
+    return this.httpClient.get<Post[]>('http://localhost:8080/feed/all');
   }
 }

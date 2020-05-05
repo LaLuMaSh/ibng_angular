@@ -8,6 +8,7 @@ import { AuthGuardService } from './services/auth-guard.service';
 import { LogoutComponent } from './components/user/logout/logout.component';
 import { Feed } from './model/feed';
 import { FeedComponent } from './components/feed/feed.component';
+import { GlobalFeedComponent } from './components/global-feed/global-feed.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -34,6 +35,11 @@ const routes: Routes = [
   {
     path: 'feed',
     component: FeedComponent,
+    canActivate: [AuthGuardService]
+  },
+  {
+    path: 'feed/global',
+    component: GlobalFeedComponent,
     canActivate: [AuthGuardService]
   },
   {

@@ -16,6 +16,7 @@ import { FeedComponent } from './components/feed/feed.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { GlobalFeedComponent } from './components/global-feed/global-feed.component';
 
 const interceptor = {
   provide: HTTP_INTERCEPTORS,
@@ -27,7 +28,8 @@ const interceptor = {
   declarations: [
     AppComponent,
     NotFoundComponent,
-    FeedComponent
+    FeedComponent,
+    GlobalFeedComponent
   ],
   imports: [
     BrowserModule,
