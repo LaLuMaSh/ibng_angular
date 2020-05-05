@@ -1,0 +1,37 @@
+
+
+
+<mat-drawer-container autosize class="example-container">
+  <mat-drawer opened #drawer class="example-sidenav" mode="side">
+    <nav>
+      <mat-toolbar>
+        <mat-toolbar-row *ngIf="isLoggedIn()">
+          <button mat-button routerLink="/home" routerLinkActive="active">
+            <a>Home</a>
+          </button>
+        </mat-toolbar-row>
+        <mat-toolbar-row *ngIf="isLoggedIn()">
+          <button mat-button routerLink="/feed" routerLinkActive="active">
+            <a>Feeds</a>
+          </button>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+          <button mat-button routerLink="/login" routerLinkActive="active" *ngIf="!isLoggedIn()">
+            <a>Login</a>
+          </button>
+          <button mat-button routerLink="/logout" routerLinkActive="active" *ngIf="isLoggedIn()">
+            <a>Logout</a>
+          </button>
+        </mat-toolbar-row>
+        <mat-toolbar-row *ngIf="!isLoggedIn()">
+          <button mat-button routerLink="/register" routerLinkActive="active">
+            <a>Register</a>
+          </button>
+        </mat-toolbar-row>
+      </mat-toolbar>
+    </nav>
+  </mat-drawer>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</mat-drawer-container>

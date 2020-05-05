@@ -1,0 +1,37 @@
+<div class="page center">
+  <mat-card>
+    <form #f="ngForm" class="container center" (ngSubmit)="sendRegisterRequest(f)" [formGroup]="registerGroup" name="registerFrom" #form>
+      <div class="flex-items">
+        <div *ngIf="!message">
+          <h1>Registieren</h1>
+          <mat-form-field>
+            <mat-label>Username</mat-label>
+            <input formControlName="registerUsername" required [(ngModel)]="user.username" matInput>
+          </mat-form-field>
+          <br>
+          <br>
+          <mat-form-field>
+            <mat-label>Display Name</mat-label>
+            <input formControlName="registerNickname" required [(ngModel)]="user.nickname" matInput>
+          </mat-form-field>
+          <br>
+          <br>
+          <mat-form-field>
+            <mat-label>Passwort</mat-label>
+            <input formControlName="registerPassword" required [(ngModel)]="user.password" type="password" matInput>
+          </mat-form-field>
+          <br>
+          <button mat-button type="submit" class="btn btn-success" [disabled]="!registerGroup.valid">Registrieren</button>
+        </div>
+        <div *ngIf="message">
+          <h1>Registieren</h1>
+          <p>{{message}}</p>
+          <button routerLink="home" mat-button>Home</button>
+        </div>
+      </div>
+    </form>
+  </mat-card>
+</div>
+
+
+

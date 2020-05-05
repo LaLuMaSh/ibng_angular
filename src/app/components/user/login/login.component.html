@@ -1,0 +1,27 @@
+<div class="center page">
+  <mat-card>
+    <form #f="ngForm" class="container center" (ngSubmit)="saveUser(f)" [formGroup]="group" name="form" #form>
+      <div class="flex-items center">
+        <h1>Anmelden</h1>
+        <mat-form-field>
+          <mat-label>Username</mat-label>
+          <input formControlName="username" required [(ngModel)]="user.username" matInput>
+        </mat-form-field>
+        <br>
+        <br>
+        <mat-form-field>
+          <mat-label>Passwort</mat-label>
+          <input formControlName="password" required [(ngModel)]="user.password" type="password" matInput>
+        </mat-form-field>
+        <br>
+        <mat-error *ngIf="error" class="mat-error">
+          <p>{{error}}</p>
+        </mat-error>
+
+        <button mat-button type="submit" class="btn btn-success" [disabled]="!group.valid">Anmelden</button>
+
+      </div>
+    </form>
+  </mat-card>
+
+</div>

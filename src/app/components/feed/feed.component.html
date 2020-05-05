@@ -1,0 +1,46 @@
+
+  <div *ngIf="feed && !error">
+    <div class="fullWidth">
+      <div class="fullWidth">
+      <h1>Feed von: {{feed.id}}</h1>
+        <mat-card class="post" *ngFor="let post of feed.postEntities">
+          {{parse(post.created)}} <br>
+          <br>
+          {{post.text}} <br>
+          <br>
+          {{post.author}}
+        </mat-card>
+
+        <mat-card class="post">
+          <form #f="ngForm" class="container center" (ngSubmit)="sendPost(f)" [formGroup]="postGroup" name="registerFrom" #form>
+            <mat-form-field style="width: 100%">
+              <mat-label>Text</mat-label>
+              <textarea
+                cdkTextareaAutosize
+                cdkAutosizeMinRows="2"
+                type="text"
+                formControlName="postText"
+                required
+                [(ngModel)]="post.text"
+                matInput></textarea>
+            </mat-form-field>
+
+            <mat-error *ngIf="message && error">
+              <p>{{message}}</p>
+            </mat-error>
+            <div *ngIf="message && !error">
+              <p>{{message}}</p>
+            </div>
+
+            <button mat-button type="submit" class="btn btn-success" [disabled]="!postGroup.valid">Posten</button>
+          </form>
+
+        </mat-card>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="error">
+    <mat-error>
+      {{error}}
+    </mat-error>
+  </div>

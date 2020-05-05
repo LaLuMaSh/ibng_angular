@@ -1,0 +1,24 @@
+<div *ngIf="user && !error">
+
+  <h1>
+    profil übersicht
+  </h1>
+  <mat-card>
+
+    <table>
+      <tr>
+        <td><b>Benutzername</b></td>
+        <td>{{user.username}}</td>
+      </tr>
+      <tr>
+        <td><b>Anzeigename</b></td>
+        <td>{{user.nickname}}</td>
+      </tr>
+    </table>
+  </mat-card>
+</div>
+<div *ngIf="error">
+  <mat-error>
+    {{error}}
+  </mat-error>
+</div>

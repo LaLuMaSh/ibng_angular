@@ -1,0 +1,21 @@
+.container {
+  margin: 2em;
+}
+
+mat-card {
+  margin: 3em;
+  width: 20%;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  .flex-items {
+    flex-direction: column;
+  }
+}
+
+.page {
+  height: 100%;
+  width: 100%;
+}

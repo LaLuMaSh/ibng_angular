@@ -1,0 +1,20 @@
+
+mat-card {
+  margin: 3em;
+  width: 30%;
+  height: 60%;
+}
+
+.page {
+  height: 100%;
+  width: 100%;
+}
+
+
+.center {
+  display: flex;
+  justify-content: center;
+  .flex-items {
+    flex-direction: column;
+  }
+}
